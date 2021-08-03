@@ -27,16 +27,7 @@ var largestSumAfterKNegations = function(nums, k) {
             if (nums[i]<0){
                 nums.splice(i,1,-nums[i])               
                 k-=1
-            } else {
-                for (j=0;j<k;j++){
-                    nums.splice(i,1,-nums[i])
-                    k-=1
-                    if (k<=0){break}
-                }
             }
-            if (k<=0){break}
-        }
-        break;
     }
     // console.log(nums)
     return nums.reduce((a, b) => a + b, 0)
